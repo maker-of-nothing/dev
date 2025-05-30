@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clerno</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#fdf8f2"/>
+</head>
+<body>
+  <main>
+    <div class="circle">
+      <p class="label"><span class="dot"></span>FOCUS TIME</p>
+      <h1 id="timer">25:00</h1>
+    </div>
+    <div class="controls">
+      <button onclick="pauseTimer()"><span class="icon">⏸</span><br>Pause</button>
+      <button onclick="startTimer()"><span class="icon">▶️</span><br>Start</button>
+      <button onclick="resetTimer()"><span class="icon">🔄</span><br>Reset</button>
+    </div>
+  </main>
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
